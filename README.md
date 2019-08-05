@@ -1,5 +1,5 @@
 # ipage-webservice-cep-jquery
-Busca por CEP em HTML + Jquery utilizando Web Service da Ipage Software
+Busca por CEP em Jquery utilizando Web Service da Ipage Software
 
 Como funciona um Web Service?
 Web Service é uma solução utilizada na integração de sistemas e na comunicação entre aplicações diferentes. Com esta tecnologia é possível que novas aplicações possam interagir com aquelas que já existem e que sistemas desenvolvidos em plataformas diferentes sejam compatíveis.
