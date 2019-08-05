@@ -18,4 +18,4 @@ A chave de acesso ao Web Service é obrigatória e deve ser passada na URL junto
 Os principais formatos de retorno são:
 PIPED, JSON, Querty, XML, Javascript
 
-Veja no site o exemplo antes de realizar o download: https://www.ipage.com.br/ws/exemplos/jquery/
+Veja no site o exemplo antes de realizar o download: https://www.ipage.com.br/ws/exemplos/jquery/cep/
