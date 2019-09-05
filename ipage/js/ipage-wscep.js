@@ -42,7 +42,7 @@ function IpageCep() {
       //                      |              |           |        |                |
       //                      v              v           v        v                v
       //         --------------------------- -- ---  ---------  ---- ---------------------------------
-      var link = "https://www.ipage.com.br/ws/v1/cep/" + cep + "/json/07b36825b44111e9a80952540046af69/";
+      var link = "https://www.ipage.com.br/ws/v1/cep/" + cep + "/json/CHAVE_API/";
       var msg, resultadoCEP;
       //
       $.ajax({type: 'GET',
