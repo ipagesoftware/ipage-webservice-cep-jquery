@@ -53,7 +53,6 @@ function IpageCep() {
           processData: false,
           url: link,// PÁGINA QUE RECEBERÁ OS DADOS DO CADASTRO
           dataType : 'json',
-          //data: 'cep=' + cep + "&type=json&key=07b36825b44111e9a80952540046af69",// SERIALIZA OS DADOS DO CADASTRO PARA ENVIO
           // Antes de enviar
           beforeSend: function(){
             index.wait(true);
