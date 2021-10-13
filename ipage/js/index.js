@@ -28,9 +28,9 @@ var index = function(){
         }
       });
       //
-      var now = new Date
+      var now = new Date();
       $("#year").html(now.getFullYear());
-    }
+    };
 
     var handleInputMasks = function () {
         //
@@ -46,23 +46,23 @@ var index = function(){
               // DO OBJETO INPUT
               var data = getDataAttributes(el);
               //
-              if(typeof(data['inputmaskInputformat'])!=='undefined'){
+              if(typeof(data.inputmaskInputformat)!=='undefined'){
                 // CAMPO MOEDA
-                if(data['inputmask']=='currency'){
-                  $(this).mask(data['inputmaskInputformat'], {
+                if(data.inputmask=='currency'){
+                  $(this).mask(data.inputmaskInputformat, {
                       reverse: true,
                       maxlength: false
                   });
                 }else{
-                  $(this).mask(data['inputmaskInputformat']);
+                  $(this).mask(data.inputmaskInputformat);
                 }
                 //                //
                 $(this).blur(function(){
-                    if(typeof(data['inputmaskInputformat'])!=='undefined'){
+                    if(typeof(data.inputmaskInputformat)!=='undefined'){
                       if($(this).val().trim()==''){
-                        $(this).val(data['inputmaskDefaultvalue']);
+                        $(this).val(data.inputmaskDefaultvalue);
                       }else{
-                        if(data['inputmask']=='currency'){
+                        if(data.inputmask=='currency'){
                           var ret = replaceAll($(this).val().trim(), ',', '');
                           $(this).val(ret);
                         }
@@ -76,12 +76,12 @@ var index = function(){
         function replaceAll(string, token, newtoken) {
             try{
               while (string.indexOf(token) !== -1) {
-                  string = string.replace(token, newtoken)
+                  string = string.replace(token, newtoken);
               }
             }catch(e){
               console.log(e);
             }
-            return string
+            return string;
         }
         // THE MAGIC FUNCTION CREATED BY DIÓGENES DIAS
         function getDataAttributes(el) {
@@ -97,14 +97,14 @@ var index = function(){
             return data;
         }
         //
-    }
+    };
 
     /**
      * index::handleCep()
      *
      */
     var handleCep = function () {
-      var classCep = new IpageCep(), form = $("form input[type=text]"), id, text;
+      var classCep = new IpageCep();
       // EVENTO CLICK DO BOTÃO
       $('#btn_cep').click(function(){
         var cep = $("#txt_cep").val();// PEGO O VALOR DO CEP
@@ -119,7 +119,7 @@ var index = function(){
         // TERMINAR A REQUISIÇÃO AO WEBSERVICE
         index.wait(true, function(ret){
           if(classCep.getCep(cep, function(result){
-              if(result['erro']==true){
+              if(result.erro==true){
                 alert("Cep inválido, verifique!");
                 $('#txt_cep').select().focus();
                 jQuery.each($('.ipage-result-cep'), function(index, item){
@@ -140,12 +140,12 @@ var index = function(){
             })
           );
         });
-      })
+      });
       //
       $('.ipage-resultado-cep').blur(function(){
         $(this).removeClass("ipage-result-cep");
       });
-    }
+    };
     return{
         //Função principal inicializada na carga da página
         init: function (par){
@@ -169,11 +169,3 @@ var index = function(){
       }
     };
 }();
-//
-//  _______   _                ______               _
-// |__   __| | |              |  ____|             | |
-//    | |    | |__     ___    | |__     _ __     __| |
-//    | |    | '_ \   / _ \   |  __|   | '_ \   / _` |
-//    | |    | | | | |  __/   | |____  | | | | | (_| |
-//    |_|    |_| |_|  \___|   |______| |_| |_|  \__,_|
-//
