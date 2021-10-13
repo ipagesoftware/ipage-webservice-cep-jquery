@@ -5,7 +5,7 @@
 * Scritp auxiliar da página index.php
 *
 * @author IPAGE - Diógenes Dias
-* @copyright 2019
+* @copyright 2021
 *
 */
 $(document).ready(function(){
@@ -119,16 +119,22 @@ var index = function(){
         // TERMINAR A REQUISIÇÃO AO WEBSERVICE
         index.wait(true, function(ret){
           if(classCep.getCep(cep, function(result){
-              if(result['error']){
-                alert(result['msg'])
+              console.log(result);
+              if(result['erro']==true){
+                alert("Cep inválido, verifique!");
                 $('#txt_cep').select().focus();
                 jQuery.each($('.ipage-result-cep'), function(index, item){
-                  $(this).removeClass("ipage-result-cep");
+                  $(this).removeClass("ipage-result-cep").val("");
                 });
               }else{
-                jQuery.each(result, function(index, item){
-                  if(typeof($('#' + index).val)!=='undefined'){
-                    $('#' + index).val(item.toUpperCase()).addClass("ipage-result-cep");
+                jQuery.each(result, function(index, item){                  
+                  if(typeof($('#' + index).val())!=='undefined'){
+                    switch(index){
+                      case 'erro':
+                      case 'msg':
+                      default:
+                        $('#' + index).val(item.toUpperCase()).addClass("ipage-result-cep");
+                    }
                   }
                 });
               }
