@@ -119,7 +119,6 @@ var index = function(){
         // TERMINAR A REQUISIÇÃO AO WEBSERVICE
         index.wait(true, function(ret){
           if(classCep.getCep(cep, function(result){
-              console.log(result);
               if(result['erro']==true){
                 alert("Cep inválido, verifique!");
                 $('#txt_cep').select().focus();
