@@ -2,7 +2,7 @@
 * email: diogenesdias@hotmail.com
 * http://www.ipage.com.br
 *
-* Scritp auxiliar da página index.php
+* Scritp auxiliar da página index.html
 *
 * @author IPAGE - Diógenes Dias
 * @copyright 2021
