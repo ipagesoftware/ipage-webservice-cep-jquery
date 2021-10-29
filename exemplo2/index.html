@@ -31,17 +31,20 @@
   				<!-- Form Name -->
   				<legend>Formulário Pesquisa por CEP.</legend>
   				<!--// //-->
-  				<div class="form-group">
-  					<label class="col-md-3 control-label" for="appendedtext">CEP:</label>
-  					<div class="col-md-2">
-  						<div class="input-group">
-  							<input id="txt_cep" name="txt_cep" class="form-control" type="text" value="" maxlength="9" autofocus="" />
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="appendedtext">CEP:</label>
+            <div class="col-md-4">
+              <div class="input-group">
+               <input id="txt_cep" class="form-control" type="text" value="" maxlength="9" autofocus="" />
+                <!-- Button -->
+                <div class="input-group-addon" style="padding: 0; border: none;">
+                    <button type="button" class="btn btn-success" id="btn_cep"><i class="icon-search"></i> Pesquisar</button>
+                    <button type="reset" class="btn btn-danger"><i class="icon-eraser"></i> Limpar</button>
+                </div>
               </div>
-  					</div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-success" id="btn_cep">Pesquisar</button>
-					  </div>
-  				</div>          
+            </div>
+          </div>
+          <hr />          
   				<!--// TIPO LOGRADOURO //-->
   				<div class="form-group">
   					<label class="col-md-3 control-label" for="textinput">Tipo Logradouro</label>
