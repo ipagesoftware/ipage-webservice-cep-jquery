@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+  <base href=""/>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Definicao meta tag //-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fim definicao meta tag //-->
+		<title>
+			Ipage WebService CEP &reg; - v2.0 (bootstrap + JQuery)
+		</title>
+    <style>
+        ._fancybar{margin-top:50p !important;z-index: 5}
+    </style>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+    <!-- //-->
+		<div class="container" style="padding: 30px;">
+  		<form class="form-horizontal" action="javascript:;">
+  			<fieldset>
+  				<!-- Form Name -->
+  				<legend>Formulário Pesquisa por CEP.</legend>
+  				<!--// //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="appendedtext">CEP:</label>
+  					<div class="col-md-2">
+  						<div class="input-group">
+  							<input id="txt_cep" name="txt_cep" class="form-control" type="text" value="" maxlength="9" autofocus="" />
+              </div>
+  					</div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-success" id="btn_cep">Pesquisar</button>
+					  </div>
+  				</div>          
+  				<!--// TIPO LOGRADOURO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Tipo Logradouro</label>
+  					<div class="col-md-3">
+  						<input id="tp_logradouro" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// LOGRADOURO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Logradouro:</label>
+  					<div class="col-md-8">
+  						<input id="logradouro" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// LOGRADOURO2 //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Logradouro Completo:</label>
+  					<div class="col-md-8">
+  						<input id="logradouro2" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// COMPLEMENTO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Complemento:</label>
+  					<div class="col-md-8">
+  						<input id="complemento" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// BAIRRO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Bairro:</label>
+  					<div class="col-md-4">
+  						<input id="bairro" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// CIDADE //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Cidade:</label>
+  					<div class="col-md-6">
+  						<input id="cidade" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+          <!--// CAPITAL //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Capital:</label>
+            <div class="col-md-4">
+              <input id="capital" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// ESTADO //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Estado:</label>
+            <div class="col-md-4">
+              <input id="estado" type="text" class="form-control input-md"/>
+            </div>
+          </div> 
+  				<!--// UF //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">1 - UF:</label>
+  					<div class="col-md-3">
+  						<input id="uf" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+          <!--// UF2 //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">2 - UF:</label>
+            <div class="col-md-3">
+              <input id="uf2" type="text" class="form-control input-md"/>
+            </div>
+          </div>          
+          <!--// CEP //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">1 - CEP:</label>
+            <div class="col-md-3">
+              <input id="cep" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// CEP2 //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">2 - CEP:</label>
+            <div class="col-md-3">
+              <input id="cep2" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+  				<!--// IBGE //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">IBGE:</label>
+  					<div class="col-md-3">
+  						<input id="ibge" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// GIA //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">GIA:</label>
+  					<div class="col-md-3">
+  						<input id="gia" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// DDD //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">DDD:</label>
+  					<div class="col-md-3">
+  						<input id="ddd" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// DISTÂNCIA DA CAPITAL //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Distância da Capital:</label>
+  					<div class="col-md-3">
+  						<input id="distancia_da_capital" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// FAIXA DE CEP //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Faixa de CEP:</label>
+  					<div class="col-md-3">
+  						<input id="faixa_de_cep" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// GENTÍLICO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Gentilico:</label>
+  					<div class="col-md-4">
+  						<input id="gentilico" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// LATITUDE //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Latitude:</label>
+  					<div class="col-md-3">
+  						<input id="latitude" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// LONGITUDE //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Longitude:</label>
+  					<div class="col-md-3">
+  						<input id="longitude" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// REGIÃO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Região:</label>
+  					<div class="col-md-4">
+  						<input id="regiao" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// MESORREGIÃO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Mesorregião:</label>
+  					<div class="col-md-4">
+  						<input id="mesorregiao" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// MICRORREGIÃO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Microrregião:</label>
+  					<div class="col-md-4">
+  						<input id="microrregiao" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+  				<!--// TEMPO DE PERCURSO DE VEÍCULO //-->
+  				<div class="form-group">
+  					<label class="col-md-3 control-label" for="textinput">Tempo Percurso Veículo:</label>
+  					<div class="col-md-4">
+  						<input id="tempo_percurso_veiculo" type="text" class="form-control input-md"/>
+  					</div>
+  				</div>
+          <!--// ORIGEM //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Origem:</label>
+            <div class="col-md-4">
+              <input id="origem" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// TEMPO DE PROCESSAMENTO //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Tempo de processamento seg.:</label>
+            <div class="col-md-4">
+              <input id="tempo_processamento" name="tempo_processamento" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// COPY //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Copyright:</label>
+            <div class="col-md-8">
+              <input id="copy" name="copy" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// LICENCIADO PARA //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Licenciado para:</label>
+            <div class="col-md-8">
+              <input id="licenciado_para" name="licenciado_para" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+          <!--// ERROR //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Error:</label>
+            <div class="col-md-2">
+              <input id="error" name="error" type="text" class="form-control input-md"/>
+            </div>
+          </div>          
+          <!--// MSG //-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="textinput">Resposta:</label>
+            <div class="col-md-8">
+              <input id="msg" name="msg" type="text" class="form-control input-md"/>
+            </div>
+          </div>
+  			</fieldset>
+  		</form>
+    </div>
+    <!-- //-->
+		<script src="assets/js/jquery-1.11.0.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+    <!-- start: Pacote javascript Ipage Webservice CEP //-->
+    <script src="ipage/js/ipage-wscep.js"></script>
+    <script src="ipage/js/index.js"></script>
+    <!-- end: Pacote javascript Ipage Webservice CEP //-->
+	</body>
+</html>
