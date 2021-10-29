@@ -49,11 +49,11 @@ var index = function() {
                 $("#txt_cep").focus().select();
                 return false;
             }
-            $("#btn_cep").addClass("disabled").html("Aguarde...");
+            $("#btn_cep").addClass("disabled");
             // Espera o método da classe cep
             // terminar a requisição ao webservice
             if (classCep.getCep(cep, function(result) {
-                    $("#btn_cep").removeClass("disabled").html("Pesquisar");
+                    $("#btn_cep").removeClass("disabled");
                     if (result.error == true || (parseInt(result.error, 10) == 1)) {
                         alert(result.msg);
                         $('#txt_cep').select().focus();
